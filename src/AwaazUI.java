@@ -36,7 +36,8 @@ public class AwaazUI {
             driver.findElement(By.xpath("//button[@class='btn btn-primary']")).click();
             Thread.sleep(3000);
             int minPriceAloe = 999, minPriceAlmond = 999;
-            WebElement clickAbleAloe, clickAbleAlmond;
+            WebElement clickAbleAloe = driver.findElement(By.xpath("/html/body/div[1]/div[2]/div[1]/button"));
+            WebElement clickAbleAlmond = driver.findElement(By.xpath("/html/body/div[1]/div[2]/div[1]/button"));
             String titleAloe = "", titleAlmond = "" ;
             String title = driver.findElement(By.xpath("/html/body/div[1]/div[2]/div[1]/p[1]")).getText();
             System.out.println(title);
@@ -198,13 +199,16 @@ public class AwaazUI {
                     }
                 }
             }
+            clickAbleAlmond.click();
+            clickAbleAloe.click();
             driver.findElement(By.xpath("//button[@onclick='goToCart()']")).click();
             Cart(titleAloe,titleAlmond);
         } else {
             driver.findElement(By.xpath("//button[@class='btn btn-primary']")).click();
             Thread.sleep(3000);
             int minPriceSPF30 = 999, minPriceSPF50 = 999;
-            WebElement clickAbleSPF30, clickAbleSPF50;
+            WebElement clickAbleSPF30 = driver.findElement(By.xpath("/html/body/div[1]/div[2]/div[1]/button"));
+            WebElement clickAbleSPF50 = driver.findElement(By.xpath("/html/body/div[1]/div[2]/div[1]/button")); ;
             String titleSPF30 = "", titleSPF50 = "";
             String title = driver.findElement(By.xpath("/html/body/div[1]/div[2]/div[1]/p[1]")).getText();
             System.out.println(title);
@@ -366,6 +370,9 @@ public class AwaazUI {
                     }
                 }
             }
+            clickAbleSPF30.click();
+            clickAbleSPF50.click();
+            Thread.sleep(3000);
             driver.findElement(By.xpath("//button[@onclick='goToCart()']")).click();
             Cart(titleSPF30,titleSPF50);
         }
