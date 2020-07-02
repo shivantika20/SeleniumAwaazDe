@@ -38,7 +38,7 @@ public class AwaazUI {
             int minPriceAloe = 999, minPriceAlmond = 999;
             WebElement clickAbleAloe = driver.findElement(By.xpath("/html/body/div[1]/div[2]/div[1]/button"));
             WebElement clickAbleAlmond = driver.findElement(By.xpath("/html/body/div[1]/div[2]/div[1]/button"));
-            String titleAloe = "", titleAlmond = "" ;
+            String titleAloe = "", titleAlmond = "";
             String title = driver.findElement(By.xpath("/html/body/div[1]/div[2]/div[1]/p[1]")).getText();
             System.out.println(title);
             //To check if aloe is there
@@ -202,13 +202,14 @@ public class AwaazUI {
             clickAbleAlmond.click();
             clickAbleAloe.click();
             driver.findElement(By.xpath("//button[@onclick='goToCart()']")).click();
-            Cart(titleAloe,titleAlmond);
+            Cart(titleAloe, titleAlmond);
         } else {
             driver.findElement(By.xpath("//button[@class='btn btn-primary']")).click();
             Thread.sleep(3000);
             int minPriceSPF30 = 999, minPriceSPF50 = 999;
             WebElement clickAbleSPF30 = driver.findElement(By.xpath("/html/body/div[1]/div[2]/div[1]/button"));
-            WebElement clickAbleSPF50 = driver.findElement(By.xpath("/html/body/div[1]/div[2]/div[1]/button")); ;
+            WebElement clickAbleSPF50 = driver.findElement(By.xpath("/html/body/div[1]/div[2]/div[1]/button"));
+            ;
             String titleSPF30 = "", titleSPF50 = "";
             String title = driver.findElement(By.xpath("/html/body/div[1]/div[2]/div[1]/p[1]")).getText();
             System.out.println(title);
@@ -374,8 +375,10 @@ public class AwaazUI {
             clickAbleSPF50.click();
             Thread.sleep(3000);
             driver.findElement(By.xpath("//button[@onclick='goToCart()']")).click();
-            Cart(titleSPF30,titleSPF50);
+            Cart(titleSPF30, titleSPF50);
         }
+        driver.close();
+        driver.quit();
     }
 
     public static void Cart(String title1, String title2) throws InterruptedException {
@@ -386,8 +389,8 @@ public class AwaazUI {
         } else {
             driver.findElement(By.xpath("html/body/div[1]/div[3]/form/button/span")).click();
             Thread.sleep(3000);
-            driver.findElement(By.xpath("//input[@type='email']")).sendKeys("abc@gmail.com");
-            driver.findElement(By.xpath("input[@type='tel']")).sendKeys("3566000020000410");
+            driver.findElement(By.xpath("/html/body/div[2]/section/span[2]/div/div/main/form/div/div/div/div/div/div[1]/div[1]/div/div/div/fieldset/span/div/div[1]/input")).sendKeys("abc@gmail.com");
+            driver.findElement(By.xpath("/html/body/div[2]/section/span[2]/div/div/main/form/div/div/div/div/div/div[1]/div[2]/fieldset/div[1]/div[1]/span/span[1]/div/div[1]/input]")).sendKeys("3566000020000410");
             driver.findElement(By.xpath("/html/body/div[2]/section/span[2]/div/div/main/form/div/div/div/div/div/div[1]/div[2]/fieldset/div[1]/div[2]/div[1]/div[1]/input")).sendKeys("02/23");
             driver.findElement(By.xpath("/html/body/div[2]/section/span[2]/div/div/main/form/div/div/div/div/div/div[1]/div[2]/fieldset/div[1]/div[2]/div[2]/div[1]/input")).sendKeys("123");
             driver.findElement(By.xpath("/html/body/div[2]/section/span[2]/div/div/main/form/nav/div/div/div/button")).click();
