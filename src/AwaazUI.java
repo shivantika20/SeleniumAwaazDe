@@ -378,13 +378,14 @@ public class AwaazUI {
         }
     }
 
-    public static void Cart(String title1, String title2) {
+    public static void Cart(String title1, String title2) throws InterruptedException {
         String p1 = driver.findElement(By.xpath("/html/body/div[1]/div[2]/table/tbody/tr[1]/td[1]")).getText();
         String p2 = driver.findElement(By.xpath("/html/body/div[1]/div[2]/table/tbody/tr[2]/td[1]")).getText();
         if (!(p1.equals(title1) || p1.equals(title2)) && !(p2.equals(title1) || p2.equals(title2))) {
             System.out.println("Error");
         } else {
             driver.findElement(By.xpath("html/body/div[1]/div[3]/form/button/span")).click();
+            Thread.sleep(3000);
             driver.findElement(By.xpath("//input[@type='email']")).sendKeys("abc@gmail.com");
             driver.findElement(By.xpath("input[@type='tel']")).sendKeys("3566000020000410");
             driver.findElement(By.xpath("/html/body/div[2]/section/span[2]/div/div/main/form/div/div/div/div/div/div[1]/div[2]/fieldset/div[1]/div[2]/div[1]/div[1]/input")).sendKeys("02/23");
