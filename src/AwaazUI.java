@@ -204,7 +204,7 @@ public class AwaazUI {
             driver.findElement(By.xpath("//button[@onclick='goToCart()']")).click();
             Cart(titleAloe, titleAlmond);
         } else {
-            driver.findElement(By.xpath("//button[@class='btn btn-primary']")).click();
+            driver.findElement(By.xpath("/html/body/div/div[3]/div[2]/a/button")).click();
             Thread.sleep(3000);
             int minPriceSPF30 = 999, minPriceSPF50 = 999;
             WebElement clickAbleSPF30 = driver.findElement(By.xpath("/html/body/div[1]/div[2]/div[1]/button"));
@@ -377,8 +377,6 @@ public class AwaazUI {
             driver.findElement(By.xpath("//button[@onclick='goToCart()']")).click();
             Cart(titleSPF30, titleSPF50);
         }
-        driver.close();
-        driver.quit();
     }
 
     public static void Cart(String title1, String title2) throws InterruptedException {
