@@ -377,6 +377,8 @@ public class AwaazUI {
             driver.findElement(By.xpath("//button[@onclick='goToCart()']")).click();
             Cart(titleSPF30, titleSPF50);
         }
+        driver.close();
+        driver.quit();
     }
 
     public static void Cart(String title1, String title2) throws InterruptedException {
