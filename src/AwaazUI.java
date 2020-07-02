@@ -1,9 +1,12 @@
+import org.openqa.selenium.Alert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 
+import java.util.Iterator;
+import java.util.Set;
 import java.util.concurrent.TimeUnit;
 
 public class AwaazUI {
@@ -389,11 +392,22 @@ public class AwaazUI {
         } else {
             driver.findElement(By.xpath("html/body/div[1]/div[3]/form/button/span")).click();
             Thread.sleep(3000);
+            driver.switchTo().frame("stripe_checkout_app");
+            //driver.findElement(By.xpath("//*[@id=baa77080-bc81-11ea-96a7-6b71358b7fbe]")).sendKeys("abc@gmail.com");
+            //WebElement email = driver.findElement(By.cssSelector("//*[@id=baa77080-bc81-11ea-96a7-6b71358b7fbe]"));
+            //email.click();
+            //email.sendKeys("abc@gmail.com");
             driver.findElement(By.xpath("/html/body/div[2]/section/span[2]/div/div/main/form/div/div/div/div/div/div[1]/div[1]/div/div/div/fieldset/span/div/div[1]/input")).sendKeys("abc@gmail.com");
-            driver.findElement(By.xpath("/html/body/div[2]/section/span[2]/div/div/main/form/div/div/div/div/div/div[1]/div[2]/fieldset/div[1]/div[1]/span/span[1]/div/div[1]/input]")).sendKeys("3566000020000410");
+            Thread.sleep(1000);
+            driver.findElement(By.xpath("/html/body/div[2]/section/span[2]/div/div/main/form/div/div/div/div/div/div[2]/span/div/div/div/div[2]/span")).click();
+            Thread.sleep(1000);
+            driver.findElement(By.xpath("/html/body/div[2]/section/span[2]/div/div/main/form/div/div/div/div/div/div[1]/div[2]/fieldset/div[1]/div[1]/span/span[1]/div/div[1]/input")).sendKeys("3566000020000410");
             driver.findElement(By.xpath("/html/body/div[2]/section/span[2]/div/div/main/form/div/div/div/div/div/div[1]/div[2]/fieldset/div[1]/div[2]/div[1]/div[1]/input")).sendKeys("02/23");
             driver.findElement(By.xpath("/html/body/div[2]/section/span[2]/div/div/main/form/div/div/div/div/div/div[1]/div[2]/fieldset/div[1]/div[2]/div[2]/div[1]/input")).sendKeys("123");
+            driver.findElement(By.xpath("/html/body/div[2]/section/span[2]/div/div/main/form/div/div/div/div/div/div[1]/div[2]/fieldset/div[2]/div/div/div/div/div[1]/input")).sendKeys("560034");
+            Thread.sleep(1000);
             driver.findElement(By.xpath("/html/body/div[2]/section/span[2]/div/div/main/form/nav/div/div/div/button")).click();
+            Thread.sleep(1000);
         }
     }
 }
